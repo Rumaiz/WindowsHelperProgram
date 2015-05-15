@@ -8,7 +8,7 @@ FileCollection::FileCollection() : nCommands(0)
 
 FileCollection::~FileCollection()
 {
-	
+	delete commandVector;
 }
 
 void FileCollection::addWord(string word)	// add command to the back of vector

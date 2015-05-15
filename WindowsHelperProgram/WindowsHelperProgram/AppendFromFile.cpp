@@ -9,6 +9,7 @@ AppendFromFile::AppendFromFile()
 
 AppendFromFile::~AppendFromFile()
 {
+	delete commandCollection;
 }
 
 void AppendFromFile::ImportFiles()	// open .txt and import to collection

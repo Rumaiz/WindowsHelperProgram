@@ -16,7 +16,7 @@ void PerformAction::doCommand(string command, string input)
 	{
 		openProgram(input);
 	}
-	else if (command.compare("save") == 0)
+	else if (command.compare("store") == 0)
 	{
 		
 	}

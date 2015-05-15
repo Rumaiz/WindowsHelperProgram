@@ -1,3 +1,9 @@
+#ifdef _WIN32
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+#endif
+
 #include <iostream>		// std::cout
 #include <windows.h>	
 #include <fstream>		// std::ifstream
@@ -6,21 +12,33 @@
 #include "ParseInput.h"
 
 using namespace std;
+
+void WindowsHelperProgram();
 string getUserInput();
 
 int main(int argc, char**argv)
 {
-	AppendFromFile setupCollection;
-	TextRecognition recognizeInput;
-	ParseInput AnalyzeInput;
 	
-	string input = getUserInput();	
-	AnalyzeInput.AnalyzeInput(input);
+	WindowsHelperProgram();
 
-	recognizeInput.FindResponse(AnalyzeInput.getCommand(), AnalyzeInput.getInput(), setupCollection.getCommandCollection());
-
+#ifdef _WIN32
+	if (_CrtDumpMemoryLeaks()) {
+		cout << "Memory leaks!" << endl;
+	}
+#endif
 	system("PAUSE");
-	return 1;
+	return 0;
+}
+void WindowsHelperProgram()
+{
+	AppendFromFile appendFiles;
+	TextRecognition recognizeInput;
+	ParseInput analyzeInput;
+
+	string input = getUserInput();
+	analyzeInput.AnalyzeInput(input);
+
+	recognizeInput.FindResponse(analyzeInput.getCommand(), analyzeInput.getInput(), appendFiles.getCommandCollection());
 }
 
 string getUserInput()
