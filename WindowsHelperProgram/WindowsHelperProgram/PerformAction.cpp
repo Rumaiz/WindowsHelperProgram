@@ -18,7 +18,7 @@ void PerformAction::doCommand(string command, string input)
 	}
 	else if (command.compare("save") == 0)
 	{
-
+		cout << "saving" << endl;
 	}
 	else if (command.compare("close") == 0)
 	{
