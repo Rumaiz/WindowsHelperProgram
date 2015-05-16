@@ -31,8 +31,8 @@ int main(int argc, char**argv)
 }
 void WindowsHelperProgram()
 {
-	AppendFromFile appendFiles;
-	TextRecognition recognizeInput;
+	AppendFromFile appendFiles;		// import .txt files into collections
+	TextRecognition recognizeInput;	
 	ParseInput analyzeInput;
 
 	string input = getUserInput();

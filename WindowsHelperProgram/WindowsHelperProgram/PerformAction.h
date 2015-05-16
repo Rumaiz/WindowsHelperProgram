@@ -11,8 +11,9 @@ public:
 	PerformAction();
 	~PerformAction();
 
-	void doCommand(string command, string input);
-	void openProgram(string input);
+	void DoCommand(string command, string input);
+	void OpenProgram(string input);
+	void StoreFilePath(string input);
 private:
 
 };

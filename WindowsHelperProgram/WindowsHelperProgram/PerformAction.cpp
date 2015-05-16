@@ -10,15 +10,17 @@ PerformAction::~PerformAction()
 {
 }
 
-void PerformAction::doCommand(string command, string input)
+void PerformAction::DoCommand(string command, string input)
 {
+
 	if (command.compare("open") == 0)
 	{
-		openProgram(input);
+
+		OpenProgram(input);
 	}
 	else if (command.compare("store") == 0)
 	{
-		
+		StoreFilePath(input);
 	}
 	else if (command.compare("close") == 0)
 	{
@@ -30,7 +32,12 @@ void PerformAction::doCommand(string command, string input)
 	}
 }
 
-void PerformAction::openProgram(string input)
+void PerformAction::OpenProgram(string input)
 {
 	ShellExecute(NULL, "open", input.c_str(), NULL, NULL, SW_SHOWNORMAL);    // SW_SHOWNORMAL is how window is showed
+}
+
+void PerformAction::StoreFilePath(string input)
+{
+
 }

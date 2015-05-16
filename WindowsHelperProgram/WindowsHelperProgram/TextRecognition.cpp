@@ -17,7 +17,7 @@ void TextRecognition::FindResponse(string command, string input, FileCollection*
 	{
 		if (command.compare(compare) == 0)
 		{
-			runAction.doCommand(command, input);
+			runAction.DoCommand(command, input);
 		}
 	}
 
